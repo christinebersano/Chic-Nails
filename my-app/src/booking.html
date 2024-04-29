@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Chic Nails</title>
+    <meta
+      name="viewport"
+      content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+
+    <script
+      type="module"
+      src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.js"
+    ></script>
+
+    <link rel="icon" type="image/x-icon" href="./assets/imgs/logochicnails.png" />
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script type="module" src="./js/main.js"></script>
+    <meta name="theme-color" content="#31d53d" />
+  </head>
+  <body>
+
+    <div class="image-container">
+      <div class="text">CHIC NAILS</div>
+      <a href="#" onclick="history.back(); return false;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="55" height="60" fill="#f9f9f9" class="bi bi-arrow-left-short" viewBox="0 0 16 16" style="margin-left: -2px;">
+          <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5"/>
+        </svg></a>
+    </div>
+
+
+
+    
+     <div class="booking-container">
+      <div class="nine">
+        <h1>"make your nail appoinment"<span>Book Now</span></h1>
+      </div>
+        <form id="booking-form">
+          <div class="input-group">
+             <label for="full-name">Enter Name:</label> 
+            <input type="text" id="full-name" placeholder="Full name" required> 
+          </div>
+              <div class="input-group">
+                <label for="phone-number">Phone Number:</label> 
+                <input type="tel" id="phone-number" name="phone-number" required> 
+               </div> 
+            <div class="input-group">
+                <label for="service">Select Service:</label>
+                <select id="service" name="service" required>
+                    <option value="">Select Service:</option>
+                    <option value="manicure">Manicure</option>
+                    <option value="pedicure">Pedicure</option>
+                    <option value="gel-polish">Gel Polish</option>
+                    <option value="gel-polish">Nail Extensions</option>
+                    <option value="gel-polish">Hand Spa</option>
+                    <option value="gel-polish">Foot Spa</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="date">Select Date:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div class="input-group"> 
+                <label for="time">Select Time:</label>
+                <input type="time" id="time" name="time" min="09:00" max="18:00" required>
+            </div>
+            <hr>
+            <div class="input-group">
+                <label for="services">Notes & Requests:</label>
+                <textarea id="services" name="services" rows="4" required></textarea>
+            </div>
+            <button type="submit"><b>Book Appointment</b></button>
+            <hr class="solid">
+            <hr class="solid">
+            <br>
+            <br>
+        </form>
+    </div>
+    <br>
+    <br>
+
+
+   
+
+
+
+           <!--Bottom Navigation Bar-->
+         <div class="container-fluid navigation">
+          <!--1st icon-->
+          <ul>
+            <li class="list">
+              <a href="gallery.html">
+                <span class="icon"></span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-images" viewBox="0 0 16 16">
+                  <path d="M4.502 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/>
+                  <path d="M14.002 13a2 2 0 0 1-2 2h-10a2 2 0 0 1-2-2V5A2 2 0 0 1 2 3a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-1.998 2M14 2H4a1 1 0 0 0-1 1h9.002a2 2 0 0 1 2 2v7A1 1 0 0 0 15 11V3a1 1 0 0 0-1-1M2.002 4a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1z"/>
+                </svg>
+              </a>
+            </li>
+            <p style="color: white; margin-bottom: 2px;">Gallery</p>
+          </ul>
+          <!--2nd icon-->
+          <ul>
+            <li class="list">
+              <a href="booking.html">
+                <span class="icon"></span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-calendar2-heart" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4zM1 3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm2 .5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5V4a.5.5 0 0 0-.5-.5zm5 4.493c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132"/>
+                </svg>
+              </a>
+            </li>
+            <p style="color: white; margin-bottom: 2px;">Booking</p>
+          </ul>
+          <!--3rd icon-->
+          <ul>
+            <li class="list">
+              <a href="notif.html">
+                <span class="icon"></span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white"  class="bi bi-bell" viewBox="0 0 16 16">
+                  <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4 4 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4 4 0 0 0-3.203-3.92zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5 5 0 0 1 13 6c0 .88.32 4.2 1.22 6"/>
+                </svg>
+              </a>
+            </li>
+            <p style="color: white; margin-bottom: 2px;">Notification</p>
+            <div class="indicator"></div>
+          </ul>
+         <!--4th icon-->
+          <ul>
+            <li class="list">
+              <a href="profile.html">
+                <span class="icon"></span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-person" viewBox="0 0 16 16">
+                  <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+                </svg>
+              </a>
+            </li>
+            <p style="color: white; margin-bottom: 2px;">Profile</p>
+            <div class="indicator"></div>
+          </ul>
+        </div>
+
+  
+        
+
+
+
+
+    <script>
+     document.addEventListener("DOMContentLoaded", function() {
+  const bookingForm = document.getElementById("booking-form");
+  const confirmationMessage = document.getElementById("confirmation-message");
+
+  bookingForm.addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    // Retrieve form input values
+    const service = document.getElementById("service").value;
+    const date = document.getElementById("date").value;
+    const time = document.getElementById("time").value;
+
+    // Display confirmation message
+    confirmationMessage.style.display = "block";
+
+    // Hide confirmation message after 3 seconds (3000 milliseconds)
+    setTimeout(function() {
+      confirmationMessage.style.display = "none";
+    }, 10000);
+
+    // Optionally, you can reset the form after submission
+    bookingForm.reset();
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+     <script src="./js/capacitor-welcome.js" type="module"></script>
+    </body>
+  </html>
+  

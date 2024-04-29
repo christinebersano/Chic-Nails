@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Chic Nails</title>
+    <meta
+      name="viewport"
+      content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+
+    <script
+      type="module"
+      src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.js"
+    ></script>
+
+    <!-- <link rel="icon" type="image/x-icon" href="./assets/imgs/logochicnails.png"/> -->
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script type="module" src="./js/main.js"></script>
+    <meta name="theme-color" content="#31d53d" />
+  </head>
+  <body>
+
+    <div class="login-form">
+      
+              <!-- Alert notification field -->
+              <div class="alert alert-success d-none" role="alert"></div>
+              <div class="alert alert-danger d-none" role="alert"></div>
+
+
+      <div class="form-inner">
+        <img src="./assets/imgs/logochicnails.png" alt="Logo" class="logolog" />
+        <form id="login_form">
+          <div class="mb-3 mt-3">
+            <label for="email" class="form-label">Enter email:</label>
+            <div class="input-icon2">
+              <input type="email" class="form-control" id="email" placeholder="Email address">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill icon" viewBox="0 0 16 16">
+                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+              </svg>
+            </div>
+          </div>
+          <br>
+          <div class="mb-3">
+            <label for="pwd" class="form-label">Enter password:</label>
+            <div class="input-icon2">
+              <input type="password" class="form-control" id="pwd" placeholder="Password" name="pswd">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock-fill icon" viewBox="0 0 16 16">
+                <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"/>
+              </svg>
+            </div>
+          </div>
+          
+          <br>
+          <hr>
+          <br>
+          <div class="submit">
+            <button type="submit" class="btn" id="login">Log In</button>
+          </div>
+          <div class="forget">
+          </div>
+
+          <div class="create-account">
+            <p>Create Account</p><a href="accsignup.html" class="signup-link">Sign Up</a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+
+    
+
+<!--
+     <script>
+        document.getElementById('login-btn').addEventListener('click', function() {
+          var email = document.getElementById('email').value;
+          var password = document.getElementById('pwd').value;
+    
+          // Basic email validation
+          if (!email || !email.trim()) {
+            alert('Please enter a valid email address.');
+            return;
+          }
+    
+          // Basic password validation
+          if (!password || !password.trim()) {
+            alert('Please enter a password.');
+            return;
+          }
+    
+          // Here you can add code to handle form submission, like making an AJAX request
+          // For now, let's just log the values to the console
+          console.log('Email:', email);
+          console.log('Password:', password);
+    
+          // Reset form after submission (optional)
+          document.getElementById('login-form').reset();
+        });
+
+
+
+
+        document.querySelector('.login-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent default form submission behavior
+    
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('pwd').value;
+
+    // Check if admin credentials are entered
+    if (email === 'tiney26@gmail.com' && password === 'july262022') {
+        // Redirect admin to home.html
+        window.location.href = 'home.html';
+    } else {
+        // Redirect other users to gallery.html
+        window.location.href = 'gallery.html';
+    }
+});
+      </script>
+      -->
+
+
+    <script src="./js/capacitor-welcome.js" type="module"></script>
+  </body>
+</html>

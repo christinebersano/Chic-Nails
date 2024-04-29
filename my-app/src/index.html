@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Chic Nails</title>
+    <meta
+      name="viewport"
+      content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+
+    <script
+      type="module"
+      src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.js"
+    ></script>
+
+    <link rel="icon" type="image/x-icon" href="./assets/imgs/logochicnails.png" />
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script type="module" src="./js/main.js"></script>
+    <meta name="theme-color" content="#31d53d" />
+  </head>
+  <body>
+
+    <div class="cover-index">
+      <img src="./assets/imgs/logochicnails.png" alt="Logo" class="logo">
+      <div class="cover-index">
+        <div class="spinner"></div>
+      </div>
+    </div>
+
+    <script>
+      // Wait for the DOM to be fully loaded
+      document.addEventListener("DOMContentLoaded", function() {
+        // Wait for 6 seconds before redirecting to the register page
+        setTimeout(function() {
+          window.location.href = "register.html"; // Change this to the path of your register page
+        }, 2000); // Adjust the time delay (in milliseconds) as needed
+      });
+    </script>
+   
+
+  
+
+    <script src="./js/capacitor-welcome.js" type="module"></script>
+  </body>
+</html>

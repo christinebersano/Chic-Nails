@@ -7,8 +7,7 @@ form_signup.onsubmit = async (e) => {
 
   // Disable button
   document.querySelector("#form_signup button").disabled = true;
-  document.querySelector("#form_signup button").innerHTML =
-    '<div class="spinner-border me-2" role="status"></div> <span>Loading..</span>';
+  document.querySelector("#form_signup button").innerHTML = '<div class="spinner-border me-2" role="status"></div> <span>Loading..</span>';
 
   const formData = new FormData(form_signup);
   const password = formData.get("password");
@@ -17,13 +16,12 @@ form_signup.onsubmit = async (e) => {
   const lastname = formData.get("lastname");
   const phone_number = formData.get("phone_number");
 
+
   try {
-    const { data: signUpData, error: signUpError } = await supabase.auth.signUp(
-      {
-        email: email,
-        password: password,
-      }
-    );
+    const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
+      email: email,
+      password: password,
+    });
 
     if (signUpError) {
       if (signUpError.message === "Email already taken.") {
@@ -58,13 +56,15 @@ form_signup.onsubmit = async (e) => {
     // Reset Form
     form_signup.reset();
 
+
+
     // Enable submit button
     document.querySelector("#form_signup button").disabled = false;
-    document.querySelector("#form_signup button").innerHTML = "Sign Up";
+    document.querySelector("#form_signup button").innerHTML = 'Sign Up';
 
     // Redirect to login page
     setTimeout(() => {
-      window.location.href = "/register.html";
+      window.location.href = "login.html";
     }, 2000);
   } catch (error) {
     errorNotification("Error signing up. Please try again later.", 10);

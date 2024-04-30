@@ -1,8 +1,7 @@
-import { errorNotification, successNotification, supabase } from "../main";
-
-let isLoggedIn = localStorage.getItem("access_token") !== null;
-
 function setRouter() {
+  let isLoggedIn = localStorage.getItem("access_token") !== null;
+  const userRole = localStorage.getItem("role");
+
   switch (window.location.pathname) {
     case "/":
     case "/index.html":
@@ -21,14 +20,17 @@ function setRouter() {
     case "/adminbooking.html":
     case "/adminprofile.html":
     case "/customer.html":
-
       // Allow access to items.html only if the user has the "Owner" or "Admin" role
-      if (!localStorage.getItem("access_token")/*  || (userRole !== "user" && userRole !== "Admin") */) {
+      if (
+        !localStorage.getItem(
+          "access_token"
+        ) /*  || (userRole !== "user" && userRole !== "Admin") */
+      ) {
         window.location.pathname = "/index.html"; // redirect to home page if not logged in or not an owner/admin
       }
       break;
 
-   /*  case "/dashboard.html":
+    /*  case "/dashboard.html":
       // Add more cases if there are more pages
       if (!isLoggedIn) {
         window.location.pathname = "/index.html"; // default page when logged out

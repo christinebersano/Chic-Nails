@@ -7,7 +7,8 @@ login_form.onsubmit = async (e) => {
 
   // Disable button
   document.querySelector("#login_form button").disabled = true;
-  document.querySelector("#login_form button").innerHTML = '<div class="spinner-border me-2" role="status"></div> <span>Loading..</span>';
+  document.querySelector("#login_form button").innerHTML =
+    '<div class="spinner-border me-2" role="status"></div> <span>Loading..</span>';
 
   const formData = new FormData(login_form);
 
@@ -22,30 +23,37 @@ login_form.onsubmit = async (e) => {
 
   console.log(user);
 
-  if (session!= null) {
+  if (session != null) {
     // Store tokens for API
     localStorage.setItem("access_token", session.access_token);
     localStorage.setItem("refresh_token", session.refresh_token);
 
-    // For role-based authentication; uncomment if you want to implement example: admin log-in
-    let { data: userinfos, error } = await supabase
-     .from("userinfos")
-     .select("*")
+    localStorage.setItem("auth_id", user?.id); //auth user id para ma acces bsag asa nga html
 
-    // Save user id in local storage
+    let { data: userinfos, error } = await supabase
+      .from("userinfos")
+      .select("*")
+      .eq("user_id", localStorage.getItem("auth_id"));
+
     localStorage.setItem("user_id", userinfos[0].id);
     console.log(userinfos[0].id);
 
-    if (session!= null) {
-      const userRole = userinfos[0].Role;
+    if (session != null) {
+      const userRole = userinfos[0].role;
       const userId = user.id;
 
-      successNotification("Login Successfully!", 10);
-
-      window.location.pathname = '/gallery.html';
+      console.log(userRole);
+      localStorage.setItem("role", userRole); //e butang lang ni sa variable para ma acces nimo sa lain HTML.
+      if (userRole === "admin") {
+        window.location.pathname = "/profile.html"; //if admin ang role mo redirect sa profile.html
+      } else if (userRole === "user") {
+        window.location.pathname = "/gallery.html"; //if user ang role mo redirect sa gallery.html
+      } else {
+        errorNotification("`Error: ${error.message}`", 10);
+        console.log(error);
+      }
     }
   } else {
-    //alert(`Error: ${error.message}`);
     errorNotification("Cannot login account", 2);
     console.log(error);
   }
@@ -55,5 +63,5 @@ login_form.onsubmit = async (e) => {
 
   // Enable submit button
   document.querySelector("#login_form button").disabled = false;
-  document.querySelector("#login_form button").innerHTML = 'Log in';
+  document.querySelector("#login_form button").innerHTML = "Log in";
 };
